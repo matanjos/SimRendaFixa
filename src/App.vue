@@ -1,16 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="bg-light">
+     <header>
+        <h1>Simulador de Renda Fixa</h1>
+     </header>
+     <aside id="sidebar">
+      <MenuComponent/>
+     </aside>
+     <div id="content" >
+      <router-view></router-view>
+     </div>
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+//import FuturoComponent from './components/FuturoComponent.vue'
+//import PassadoComponent from './components/PassadoComponent.vue'
+import MenuComponent from './components/MenuComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    //HomeComponent,
+    //FuturoComponent,
+    //PassadoComponent,
+    MenuComponent,
+}
 }
 </script>
 
@@ -20,7 +37,24 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #2c2c2c;
+  margin-top: 0px;
 }
+
+header{
+  color: white;
+  background-color: #373e98;
+}
+
+#content{
+  width: 80%;
+	float: right;
+		/*text-align: center;*/
+}
+
+#sidebar{
+  width: 20%;
+	float: left;
+}
+
 </style>
