@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { ServerApiVersion } = require('mongodb');
 const cors = require('cors');
-const rotas = require('./Rotas');
+const rotas = require('./Rotas.js');
 const path = require('path');
 const serveStatic = require('serve-static');
 
