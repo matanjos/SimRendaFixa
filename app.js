@@ -26,9 +26,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(serveStatic(__dirname + '/client/dist'));
-app.use(history({index: path.join(__dirname,'/client/dist/index.html')}));
-app.use(serveStatic(__dirname + '/client/dist'));
 app.use('/', rotas);
+app.use(history({index: path.join(__dirname,'/client/dist/index.html')}));
 
 
 
