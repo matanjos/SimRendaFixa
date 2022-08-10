@@ -1,11 +1,12 @@
 <template>
 <div class="passado">
+    <h3><strong>Instruções</strong></h3>
     <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa de forma a entender quanto o(s) investimento(s)
           teriam rendido caso feito(s) em determinado prazo até a presente data.
           Inicialmente selecione os investimentos a serem simulados atráves das caixas de seleção. 
           Após isso, insira o prazo do investimento e o valor do investimento inicial.
-          Por fim, clique no botão "Passado" para realizar a simulação.
+          Por fim, clique no botão "Simular Passado" para realizar a simulação.
         </p>
     <div v-if="notSubmitted" id="formulario">
         <form  @submit.prevent="registerInvestimento">
