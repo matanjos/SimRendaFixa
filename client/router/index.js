@@ -12,6 +12,12 @@ const routes = [
     { path: path.join(__dirname,'/sobre'), name: "Sobre" , component: SobreComponent }
 ];
 
+/*const routes = [
+    { path: '/',  name: "Home" ,component: HomeComponent, children:[] },
+    { path: '/simulpassado',name: "Simular Passado" , component: PassadoComponent},
+    { path: '/simulfuturo',name: "Simular Futuro" , component: FuturoComponent },
+    { path: '/sobre', name: "Sobre" , component: SobreComponent }
+];*/
 
 const router = createRouter({
     history: createWebHistory(),
