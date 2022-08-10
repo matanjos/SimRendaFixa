@@ -1,6 +1,6 @@
 <template>
 <div class="passado">
-    <h3><strong>Instruções</strong></h3>
+    <h3>Instruções</h3>
     <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa de forma a entender quanto o(s) investimento(s)
           teriam rendido caso feito(s) em determinado prazo até a presente data.
@@ -36,11 +36,11 @@
            <br>
           <div class="mb-3">
              <label for="tempo" class="form-label"><strong>Qual o tempo do investimento em meses?</strong></label><br>
-            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" v-model.number="tempoInvestimento">
+            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" v-model.number="tempoInvestimento" required>
           </div>
           <div class="mb-3">
             <label for="investimento-inicial" class="form-label"><strong>Qual o valor do investimento inicial?</strong></label><br>
-            <input type="number" name="investimento-inicial" id="investimento-inicial" min="1" v-model.number="investimentoInicial">
+            <input type="number" name="investimento-inicial" id="investimento-inicial" min="1" v-model.number="investimentoInicial" required>
           </div>
           <button class="btn btn-primary"><span class="bi-check-circle"></span> Simular Passado</button>
         </form>
