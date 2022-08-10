@@ -6,7 +6,11 @@ const investimento = require(path.join(__dirname,'./Investimento'));
 // rota inicial
 router.get('/', (req,res)=>{
     res.send("Pagina inicial");
-})
+});
+
+router.get('/sobre', (req,res)=>{
+    res.sendFile(path.join(__dirname,'/client/dist/index.html'));
+});
 
 
 
