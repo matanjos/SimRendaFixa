@@ -337,6 +337,7 @@ input[type=number] {
   max-height: 380px;
   max-width: 400px;
   align-items: center;
+  justify-content: center;
   display: flex;
 }
 
