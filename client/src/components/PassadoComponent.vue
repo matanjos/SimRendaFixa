@@ -36,7 +36,7 @@
            <br>
           <div class="mb-3">
              <label for="tempo" class="form-label"><strong>Qual o tempo do investimento em meses?</strong></label><br>
-            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" v-model.number="tempoInvestimento" required>
+            <input type="number" name="tempo" id="tempo" min="1" max="60" placeholder="Número entre 1 e 60" alt="Insira um inteiro entre 1 e 60" v-model.number="tempoInvestimento" required>
           </div>
           <div class="mb-3">
             <label for="investimento-inicial" class="form-label"><strong>Qual o valor do investimento inicial?</strong></label><br>
