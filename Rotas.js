@@ -1,3 +1,5 @@
+const  impostoCalc = require('./calculaImposto');
+
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -51,17 +53,6 @@ router.post("/simuladofuturo", async(req,res)=>{
         return resultadoInter;
     }
 
-    let impostoCalc = (juros) =>{
-        if(tempo <= 6)
-            return parseFloat(juros) * 0.225;
-        if(tempo <= 12)
-            return parseFloat(juros) * 0.2;
-        if(tempo <= 24)
-            return parseFloat(juros) * 0.175;
-    
-            return parseFloat(juros) * 0.15;
-    }
-
 
    for(let i = 0; i < investimentosAtuais.length; i++){
         if(investimentosAtuais[i].tipo === 'CDB'){
@@ -97,7 +88,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='CDB'){
                 resultado = montante(investimentoInicial,jurosCDB,tempo);
                 Juros.CDB = (resultado - investimentoInicial).toFixed(2);
-                Imposto.CDB = impostoCalc(Juros.CDB).toFixed(2);   
+                Imposto.CDB = impostoCalc(Juros.CDB,tempo).toFixed(2);   
                 resultado = resultado - Imposto.CDB;
                 Montantes.CDB = resultado.toFixed(2);
             }
@@ -119,7 +110,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='Tesouro IPCA'){
                 resultado = montante(investimentoInicial,jurosIPCA,tempo);
                 Juros.TesouroIPCA = (resultado - investimentoInicial).toFixed(2);
-                Imposto.TesouroIPCA = impostoCalc(Juros.TesouroIPCA).toFixed(2);   
+                Imposto.TesouroIPCA = impostoCalc(Juros.TesouroIPCA,tempo).toFixed(2);   
                 resultado = resultado - Imposto.TesouroIPCA;
                 Montantes.TesouroIPCA = resultado.toFixed(2);
                 
@@ -129,7 +120,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='Tesouro Selic'){
                 resultado = montante(investimentoInicial,jurosSelic,tempo);
                 Juros.TesouroSelic = (resultado - investimentoInicial).toFixed(2);
-                Imposto.TesouroSelic = impostoCalc(Juros.TesouroSelic).toFixed(2);   
+                Imposto.TesouroSelic = impostoCalc(Juros.TesouroSelic,tempo).toFixed(2);   
                 resultado = resultado - Imposto.TesouroSelic;
                 Montantes.TesouroSelic = resultado.toFixed(2);
             }
@@ -177,16 +168,6 @@ router.post("/simuladofuturo", async(req,res)=>{
         return resultadoInter;
     }
 
-    let impostoCalc = (juros) =>{
-        if(tempo <= 6)
-            return parseFloat(juros) * 0.225;
-        if(tempo <= 12)
-            return parseFloat(juros) * 0.2;
-        if(tempo <= 24)
-            return parseFloat(juros) * 0.175;
-    
-            return parseFloat(juros) * 0.15;
-    }
 
  
     //Salvando os juros de cada investimento que serao usados para a simulacao
@@ -244,7 +225,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='CDB'){
                 resultado = montante(investimentoInicial,jurosCDB,tempo);
                 Juros.CDB = (resultado - investimentoInicial).toFixed(2);
-                Imposto.CDB = impostoCalc(Juros.CDB).toFixed(2);   
+                Imposto.CDB = impostoCalc(Juros.CDB,tempo).toFixed(2);   
                 resultado = resultado - Imposto.CDB;
                 Montantes.CDB = resultado.toFixed(2);
             }
@@ -266,7 +247,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='Tesouro IPCA'){
                 resultado = montante(investimentoInicial,jurosIPCA,tempo);
                 Juros.TesouroIPCA = (resultado - investimentoInicial).toFixed(2);
-                Imposto.TesouroIPCA = impostoCalc(Juros.TesouroIPCA).toFixed(2);   
+                Imposto.TesouroIPCA = impostoCalc(Juros.TesouroIPCA,tempo).toFixed(2);   
                 resultado = resultado - Imposto.TesouroIPCA;
                 Montantes.TesouroIPCA = resultado.toFixed(2);
             }
@@ -274,7 +255,7 @@ router.post("/simuladofuturo", async(req,res)=>{
             if(checkedInvestimentos[i]==='Tesouro Selic'){
                 resultado = montante(investimentoInicial,jurosSelic,tempo);
                 Juros.TesouroSelic = (resultado - investimentoInicial).toFixed(2);
-                Imposto.TesouroSelic = impostoCalc(Juros.TesouroSelic).toFixed(2);   
+                Imposto.TesouroSelic = impostoCalc(Juros.TesouroSelic,tempo).toFixed(2);   
                 resultado = resultado - Imposto.TesouroSelic;
                 Montantes.TesouroSelic = resultado.toFixed(2);            
             }
