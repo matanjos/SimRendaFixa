@@ -4,7 +4,7 @@
         <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa projetados para uma data futura a partir data presente.
           Inicialmente, selecione os investimentos a serem simulados atráves das caixas de seleção.
-          Após isso, insira o prazo do investimento e o valor do investimento inicial.
+          Após isso, insira o prazo do investimento (o prazo máximo para simulação é de <strong>60 meses</strong>) e o valor do investimento inicial.
           Por fim, clique no botão "Simular Futuro" para realizar a simulação.
         </p>
       <!-- Div do formulário -->
@@ -36,7 +36,7 @@
            <br>
           <div class="mb-3">
              <label for="tempo" class="form-label"><strong>Qual o tempo do investimento em meses?</strong></label><br>
-            <input type="number" name="tempo" id="tempo" min="0" max="60" alt="Insira um inteiro entre 1 e 60" placeholder="Número entre 1 e 60" v-model.number="tempoInvestimento" required>
+            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" placeholder="Número entre 1 e 60" v-model.number="tempoInvestimento" required>
           </div>
           <div class="mb-3">
             <label for="investimento-inicial" class="form-label"><strong>Qual o valor do investimento inicial?</strong></label><br>
@@ -167,7 +167,8 @@ export default {
             flagBarras: true,
             isActiveBarra: "",
             isActiveLinha: "",
-            isActiveTabela: ""
+            isActiveTabela: "",
+            notSelected: false
         };
     },
     methods: {
@@ -184,6 +185,12 @@ export default {
                       TesouroSelic: '#FFB000', //'blue',
                       'Tesouro Selic': '#FFB000' //'blue'
             }
+
+          if(this.checkedInvestimentos ===""){
+            this.notSelected = true;
+          }else{
+            this.notSelected = false;
+          }
 
 
            //Salvando os dados da simulação em um objeto
