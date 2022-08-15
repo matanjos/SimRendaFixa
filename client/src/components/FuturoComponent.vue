@@ -1,6 +1,6 @@
 <template>
 <div class="futuro">
-        <h3>Instruções</h3>
+        <h3>Instruções para simulação</h3>
         <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa projetados para uma data futura a partir data presente.
           Inicialmente, selecione os investimentos a serem simulados atráves das caixas de seleção.

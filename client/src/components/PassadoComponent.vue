@@ -1,6 +1,6 @@
 <template>
 <div class="passado">
-    <h3>Instruções</h3>
+    <h3>Instruções  para simulação</h3>
     <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa de forma a entender quanto o(s) investimento(s)
           teriam rendido caso feito(s) em determinado prazo até a presente data.
