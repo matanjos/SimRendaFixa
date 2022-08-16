@@ -1,6 +1,6 @@
 <template>
 <div class="futuro">
-        <h3>Instruções para simulação</h3>
+        <h3>Instruções</h3>
         <p>
           Neste módulo, é possível simular um ou mais investimentos de renda fixa projetados para uma data futura a partir data presente.
           Inicialmente, selecione os investimentos a serem simulados atráves das caixas de seleção.
@@ -35,12 +35,12 @@
           </div>
            <br>
           <div class="mb-3">
-             <label for="tempo" class="form-label"><strong>Qual o tempo do investimento em meses?</strong></label><br>
-            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" placeholder="Número entre 1 e 60" v-model.number="tempoInvestimento" required>
+             <label for="tempo" class="form-label"><strong>Qual o tempo do investimento em meses? (Número entre 1 e 60)</strong></label><br>
+            <input type="number" name="tempo" id="tempo" min="1" max="60" alt="Insira um inteiro entre 1 e 60" v-model.number="tempoInvestimento" required>
           </div>
           <div class="mb-3">
-            <label for="investimento-inicial" class="form-label"><strong>Qual o valor do investimento inicial?</strong></label><br>
-            <input type="number" name="investimento-inicial" id="investimento-inicial" min="1" v-model.number="investimentoInicial" required>
+            <label for="investimento-inicial" class="form-label"><strong>Qual o valor do investimento inicial? (Número maior ou igual a 1)</strong></label><br>
+            <input type="number" name="investimento-inicial" id="investimento-inicial" min="1" alt="Insira um número maior ou igual a 1" v-model.number="investimentoInicial" required>
           </div>
           <button class="btn btn-primary"><span class="bi-check-circle"></span> Simular Futuro</button>
         </form>
