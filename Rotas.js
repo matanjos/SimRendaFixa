@@ -14,6 +14,7 @@ router.get('/sobre', (req,res)=>{
     res.sendFile(path.join(__dirname,'/client/dist/index.html'));
 });
 
+
 router.get('/simulpassado', (req,res)=>{
     res.sendFile(path.join(__dirname,'/client/dist/index.html'));
 });
