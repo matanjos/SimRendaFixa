@@ -12,7 +12,6 @@ const history = require('connect-history-api-fallback');
 const app = express();
 
 
-
 mongoose.connect(process.env.DATABASE_URI, {  useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1})
   .then(() => {
     console.log('MongoDB Connected')
